@@ -13,11 +13,12 @@
      ![image](https://github.com/user-attachments/assets/dad2402b-44a9-4591-be20-249c84bf3f75) <br>
      ![image](https://github.com/user-attachments/assets/41b5d858-c508-42b1-8a4d-d845a8bc4c2d) <br>
      ![image](https://github.com/user-attachments/assets/435a6922-c97d-4a0d-af68-7746687097b1) <br>
+   - Работа с директориями в Linux:
+     Создать новую директорию и переместить туда файл "Human Friends".
+     ![image](https://github.com/user-attachments/assets/461dd8ea-817b-4b85-9956-5d2beb7f3122) <br>
+     ![image](https://github.com/user-attachments/assets/2c805b6a-ffdd-420b-b1b9-5810191b3ad1) <br>
+     ![image](https://github.com/user-attachments/assets/fb36751b-e294-4532-b279-827a7a18ae71) <br>
 
-
-
-
-   - Работа с директориями в Linux
    - Работа с MySQL в Linux
    - Управление deb-пакетами
    - История команд в терминале Ubuntu
