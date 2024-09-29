@@ -20,6 +20,10 @@
      ![image](https://github.com/user-attachments/assets/fb36751b-e294-4532-b279-827a7a18ae71) <br>
 
    - Работа с MySQL в Linux
+     Установить MySQL на вашу вычислительную машину.
+     Подключить дополнительный репозиторий MySQL и установить один из пакетов из этого репозитория
+    ![image](https://github.com/user-attachments/assets/d30cb7fe-0ad7-448e-844c-a6a5d9dbfbb7)<br>
+    ![image](https://github.com/user-attachments/assets/daa287bd-b12e-4625-adb4-5065ed86f11a)<br>
    - Управление deb-пакетами
    - История команд в терминале Ubuntu
 2.  Объектно-ориентированное программирование
