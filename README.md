@@ -26,26 +26,26 @@
     ![image](https://github.com/user-attachments/assets/daa287bd-b12e-4625-adb4-5065ed86f11a)<br>
    - Управление deb-пакетами
    - История команд в терминале Ubuntu
-     
+      <br>
       cat > Pets
       cat > Pack
       cat Pets Pacs > animals
       cat animals
       mv animals Human Friends
       ls 
-      
+      <br>
       cd ..
       mkdir dirformove
       cd ~/dirformove
       mv Human Friends ~/dirformove
       cd ~/dirformove
       ls
-      
+      <br>
       sudo wget https://dev.mysql.com/get/mysql-apt-config_0.8.23-1_all.deb
       sudo dpkg -i mysql-apt-config_0.8.23-1_all.deb
       sudo apt-get update
       sudo apt-get install mysql-server
-
+      <br>
 sudo wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-ce-cli_20.10.13~3-0~ubuntu-jammy_amd64.deb
 sudo dpkg -i docker-ce-cli_20.10.133-0ubuntu-jammy_amd64.deb
 sudo dpkg -r docker-ce-cli
