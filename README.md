@@ -27,28 +27,28 @@
    - Управление deb-пакетами
    - История команд в терминале Ubuntu
       <br>
-      cat > Pets
-      cat > Pack
-      cat Pets Pacs > animals
-      cat animals
-      mv animals Human Friends
-      ls 
+      cat > Pets<br>
+      cat > Pack<br>
+      cat Pets Pacs > animals<br>
+      cat animals<br>
+      mv animals Human Friends<br>
+      ls <br>
+      <br><br>
+      cd ..<br>
+      mkdir dirformove<br>
+      cd ~/dirformove<br>
+      mv Human Friends ~/dirformove<br>
+      cd ~/dirformove<br>
+      ls<br>
       <br>
-      cd ..
-      mkdir dirformove
-      cd ~/dirformove
-      mv Human Friends ~/dirformove
-      cd ~/dirformove
-      ls
+      sudo wget https://dev.mysql.com/get/mysql-apt-config_0.8.23-1_all.deb<br>
+      sudo dpkg -i mysql-apt-config_0.8.23-1_all.deb<br>
+      sudo apt-get update<br>
+      sudo apt-get install mysql-server<br>
       <br>
-      sudo wget https://dev.mysql.com/get/mysql-apt-config_0.8.23-1_all.deb
-      sudo dpkg -i mysql-apt-config_0.8.23-1_all.deb
-      sudo apt-get update
-      sudo apt-get install mysql-server
-      <br>
-sudo wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-ce-cli_20.10.13~3-0~ubuntu-jammy_amd64.deb
-sudo dpkg -i docker-ce-cli_20.10.133-0ubuntu-jammy_amd64.deb
-sudo dpkg -r docker-ce-cli
+      sudo wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-ce-cli_20.10.13~3-0~ubuntu-jammy_amd64.deb<br>
+      sudo dpkg -i docker-ce-cli_20.10.133-0ubuntu-jammy_amd64.deb<br>
+      sudo dpkg -r docker-ce-cli<br>
 2.  Объектно-ориентированное программирование
    - Диаграмма классов
    - Работа с MySQL
