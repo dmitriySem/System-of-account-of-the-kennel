@@ -10,6 +10,12 @@
      В первом файле перечислить собак, кошек и хомяков. Во втором — лошадей, верблюдов и ослов.
      Объединить содержимое этих двух файлов в один и просмотреть его содержимое.
      Переименовать получившийся файл в "Human Friends".
+     ![image](https://github.com/user-attachments/assets/dad2402b-44a9-4591-be20-249c84bf3f75)
+     ![image](https://github.com/user-attachments/assets/41b5d858-c508-42b1-8a4d-d845a8bc4c2d)
+     ![image](https://github.com/user-attachments/assets/435a6922-c97d-4a0d-af68-7746687097b1)
+
+
+
 
    - Работа с директориями в Linux
    - Работа с MySQL в Linux
