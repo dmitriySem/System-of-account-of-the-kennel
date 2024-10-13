@@ -143,6 +143,9 @@ CREATE TABLE camels
     Genus_id int,
     Foreign KEY (Genus_id) REFERENCES packed_animals (Id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+```
+- Заполнить низкоуровневые таблицы именами(животных), командами которые они выполняют и датами рождения
+
    - ООП и Java
    - Программа-реестр домашних животных
    - Счетчик животных
