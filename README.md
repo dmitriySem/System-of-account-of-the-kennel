@@ -77,7 +77,15 @@
 		VALUES ('Кошки', 2),
 		('Собаки', 2),  
 		('Хомяки', 2);
-```sql   
+		CREATE TABLE cats 
+		(       
+		    Id INT AUTO_INCREMENT PRIMARY KEY, 
+		    Name VARCHAR(20), 
+		    Birthday DATE,
+		    Commands VARCHAR(50),
+		    Genus_id int,
+		    Foreign KEY (Genus_id) REFERENCES home_animals (Id) ON DELETE CASCADE ON UPDATE CASCADE
+		);   
    - ООП и Java
    - Программа-реестр домашних животных
    - Счетчик животных
