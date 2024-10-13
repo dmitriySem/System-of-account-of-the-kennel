@@ -144,7 +144,7 @@
 	    Genus_id int,
 	    Foreign KEY (Genus_id) REFERENCES packed_animals (Id) ON DELETE CASCADE ON UPDATE CASCADE
 	);
-     '''sql   
+'''sql   
    - ООП и Java
    - Программа-реестр домашних животных
    - Счетчик животных
