@@ -62,8 +62,8 @@
      USE Human_friends;
      CREATE TABLE animal_classes
      (
-      	Id INT AUTO_INCREMENT PRIMARY KEY, 
-	Class_name VARCHAR(20)
+     Id INT AUTO_INCREMENT PRIMARY KEY,
+     Class_name VARCHAR(20)
  	);
 	INSERT INTO animal_classes (Class_name)
 	VALUES ('вьючные'),
