@@ -60,15 +60,13 @@
    - Создать таблицы с иерархией из диаграммы в БД
      ```sql
      USE Human_friends;
-     CREATE TABLE animal_classes
-     (
-	Id INT AUTO_INCREMENT PRIMARY KEY, 
+     CREATE TABLE animal_classes(
+     	Id INT AUTO_INCREMENT PRIMARY KEY, 
 	Class_name VARCHAR(20)
  	);
 	INSERT INTO animal_classes (Class_name)
 	VALUES ('вьючные'),
-		('домашние');
-    
+		('домашние');    
 	CREATE TABLE home_animals
 	(
 	Id INT AUTO_INCREMENT PRIMARY KEY,
@@ -145,8 +143,7 @@
 	    Genus_id int,
 	    Foreign KEY (Genus_id) REFERENCES packed_animals (Id) ON DELETE CASCADE ON UPDATE CASCADE
 	);
-     '''sql
-   
+     '''sql   
    - ООП и Java
    - Программа-реестр домашних животных
    - Счетчик животных
