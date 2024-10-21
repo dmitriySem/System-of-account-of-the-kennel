@@ -2,6 +2,7 @@ package Animals;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 public abstract class Animals {
     protected int id;
@@ -52,5 +53,18 @@ public abstract class Animals {
     @Override
     public String toString() {
         return String.format("%d. %s: имя: %s, дата рождения: %s ", getId(), getClass().getSimpleName(), getName(), getBirthday());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animals animals = (Animals) o;
+        return Objects.equals(Name, animals.Name) && Objects.equals(Birthday, animals.Birthday) && Objects.equals(GenderName, animals.GenderName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Name, Birthday, GenderName);
     }
 }
