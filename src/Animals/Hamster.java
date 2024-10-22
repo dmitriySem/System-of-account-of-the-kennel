@@ -19,7 +19,6 @@ public class Hamster extends Animals implements HomeAnimals{
         return "Хомяк{" +
                 "Имя='" + Name + '\'' +
                 ", День рождения=" + Birthday +
-                ", Гендер='" + GenderName + '\'' +
                 ", Домашнее животное'"  +
                 '}';
     }

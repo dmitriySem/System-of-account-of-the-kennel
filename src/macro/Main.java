@@ -8,8 +8,12 @@ import Animals.Hamster;
 import Animals.Camel;
 import Animals.Donkey;
 
+import DataMySQL.MySQLConnection;
 import Farm.Farm;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -18,31 +22,29 @@ import java.util.*;
 public class Main {
 
     private static DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    private static final String urlMysql_localhost = "jdbc:mysql://localhost:3306/human_friends?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+    private static final String userName = "root";
+    private static final String password = "1111";
+
+
 //    private Farm farm;
 
     public static void main(String[] args) {
 	// write your code here
 
+//        Farm farm = new Farm();
+//        farm.addAnimal(new Cat(1, "Тишка", LocalDate.now(), "Кошка"));
+//        farm.addAnimal(new Cat(2, "Буська", LocalDate.of(2024,8,4), "Кошка"));
+////        farm.addAnimal(new Cat(3, "Буська", LocalDate.of(2024,8,4), "Кошка"));
+//        farm.addAnimal(new Horse(4, "Черныш", LocalDate.of(2020,1,5), "Лошадь"));
+//        farm.addAnimal(new Dog(5, "Зара", LocalDate.of(2019, 3,4),"Собака",new ArrayList<>(Arrays.asList("Ко мне!", "Фас!", "Сидеть!"))));
+//
+//
+
+
         Farm farm = new Farm();
-        farm.addAnimal(new Cat(1, "Тишка", LocalDate.now(), "Кошка"));
-        farm.addAnimal(new Cat(2, "Буська", LocalDate.of(2024,8,4), "Кошка"));
-        farm.addAnimal(new Cat(3, "Буська", LocalDate.of(2024,8,4), "Кошка"));
-        farm.addAnimal(new Horse(4, "Черныш", LocalDate.of(2020,1,5), "Лошадь"));
-        farm.addAnimal(new Dog(5, "Зара", LocalDate.of(2019, 3,4),"Собака",new ArrayList<>(Arrays.asList("Ко мне!", "Фас!", "Сидеть!"))));
-
-//        farm.printAllAnimals();
-
-//        farm.printTypeAnimal(PackedAnimals.class);
-//        farm.printTypeAnimal(HomeAnimals.class);
-//        System.out.println(farm.getAnimal(new Cat(1, "Тишка", LocalDate.now(), "Кошка")).get()); ;
-
-//        System.out.println(farm.getAnimalsCount());
-//        farm.getAnimals().forEach(animal -> animal.printCommands());
-//        Animals animal1 = farm.getAnimal("Зара").get();
-//        animal1.addCommand("Лежать");
-//        animal1.printCommands();
-
-//        farm.printAnimalsByBirthDay();
+        MySQLConnection connection = new MySQLConnection(urlMysql_localhost, userName, password);
+        connection.connectBase();
 
         Scanner scanner = new Scanner(System.in);
 
@@ -64,21 +66,21 @@ public class Main {
                 case 1:
                     addAnimalMenu(scanner, farm);
                     break;
-//                case 2:
-//                    listCommandsMenu(scanner);
-//                    break;
-//                case 3:
-//                    addCommandMenu(scanner);
-//                    break;
-//                case 4:
-//                    registry.listAnimalsByBirthDay();
-//                    break;
+                case 2:
+                    listCommandsMenu(scanner, farm);
+                    break;
+                case 3:
+                    addCommandMenu(scanner,farm);
+                    break;
+                case 4:
+                    farm.listAnimalsByBirthDay();
+                    break;
 //                case 5:
 //                    registry.saveToFile(FILENAME);
 //                    System.out.println("Данные сохранены.");
 //                    break;
                 case 6:
-                    farm.printTotalAnimalCount();
+                    System.out.println("Общее количество животных: " + farm.getAnimalsCount());
                     break;
                 case 7:
 //                    System.out.println("Сохранить данные перед выходом? (y/n)");
@@ -140,38 +142,28 @@ public class Main {
         System.out.println("Животное добавлено.");
     }
 
-//    private static void listCommandsMenu(Scanner scanner) {
-//        System.out.print("Введите имя животного: ");
-//        String name = scanner.nextLine();
-//        Animal animal = findAnimalByName(name);
-//        if (animal != null) {
-//            registry.listCommands(animal);
-//        } else {
-//            System.out.println("Животное не найдено.");
-//        }
-//    }
-//
-//    private static void addCommandMenu(Scanner scanner) {
-//        System.out.print("Введите имя животного: ");
-//        String name = scanner.nextLine();
-//        Animal animal = findAnimalByName(name);
-//        if (animal != null) {
-//            System.out.print("Введите новую команду: ");
-//            String command = scanner.nextLine();
-//            registry.addCommand(animal, command);
-//            System.out.println("Команда добавлена.");
-//        } else {
-//            System.out.println("Животное не найдено.");
-//        }
-//    }
-//
-//    private static Animal findAnimalByName(String name) {
-//        for (Animal animal : registry.getAnimals()) {
-//            if (animal.getName().equalsIgnoreCase(name)) {
-//                return animal;
-//            }
-//        }
-//        return null;
-//    }
+    private static void listCommandsMenu(Scanner scanner, Farm farm) {
+        System.out.print("Введите имя животного: ");
+        String name = scanner.nextLine();
+        Optional<Animals> animal = farm.getAnimal(name);
+        if (animal.isPresent()) {
+            animal.get().printCommands();
+        } else {
+            System.out.println("Животное не найдено.");
+        }
+    }
 
+    private static void addCommandMenu(Scanner scanner, Farm farm) {
+        System.out.print("Введите имя животного: ");
+        String name = scanner.nextLine();
+        Optional<Animals> animal = farm.getAnimal(name);
+        if (animal.isPresent()) {
+            System.out.print("Введите новую команду: ");
+            String command = scanner.nextLine();
+            animal.get().addCommand(command);
+            System.out.println("Команда добавлена.");
+        } else {
+            System.out.println("Животное не найдено.");
+        }
+    }
 }

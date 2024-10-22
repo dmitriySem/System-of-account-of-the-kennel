@@ -19,7 +19,6 @@ public class Cat extends Animals implements HomeAnimals{
         return "Кошка{" +
                 "Имя='" + Name + '\'' +
                 ", День рождения= " + Birthday +
-                ", Гендер=" + GenderName +
                 ", Домашнее животное"  +
                 '}';
     }

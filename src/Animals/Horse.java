@@ -19,7 +19,6 @@ public class Horse extends Animals implements PackedAnimals{
         return "Лошадь{" +
                 "Имя='" + Name + '\'' +
                 ", День рождения=" + Birthday +
-                ", Гендер='" + GenderName + '\'' +
                 ", Вьючное животное'"  +
                 '}';
     }

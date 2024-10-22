@@ -18,7 +18,6 @@ public class Dog extends Animals implements HomeAnimals{
         return "Собака{" +
                 "Имя='" + Name + '\'' +
                 ", День рождения=" + Birthday +
-                ", Гендер='" + GenderName + '\'' +
                 ", Домашнее животное'"  +
                 '}';
     }

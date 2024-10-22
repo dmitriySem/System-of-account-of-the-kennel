@@ -20,7 +20,6 @@ public class Camel extends Animals implements PackedAnimals{
         return "Верблюд{" +
                 "Имя='" + Name + '\'' +
                 ", День рождения=" + Birthday +
-                ", Гендер='" + GenderName + '\'' +
                 ", Вьючное животное'"  +
                 '}';
     }

@@ -19,7 +19,6 @@ public class Donkey extends Animals implements PackedAnimals{
         return "Осел{" +
                 "Имя='" + Name + '\'' +
                 ", День рождения=" + Birthday +
-                ", Гендер='" + GenderName + '\'' +
                 ", Вьючное животное'"  +
                 '}';
     }

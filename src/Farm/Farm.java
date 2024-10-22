@@ -4,10 +4,9 @@ package Farm;
 import Animals.Animals;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.Optional;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 public class Farm {
     private List<Animals> animalsList;
@@ -64,6 +63,14 @@ public class Farm {
 
     public void printTotalAnimalCount(){
         System.out.println(animalsList.size());
+    }
+
+    public void listAnimalsByBirthDay() {
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        animalsList.stream().sorted(Comparator.comparing(a -> a.getBirthday())).forEach(animal -> {
+            String formattedDate = LocalDate.parse(animal.getBirthday(),format).toString();
+            System.out.println(animal.getName() + " (" + formattedDate + ")" + " - " + animal.getGenderName());
+        });
     }
 
 }
