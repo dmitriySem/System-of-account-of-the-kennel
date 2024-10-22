@@ -1,10 +1,17 @@
 package Animals;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Date;
+import java.util.List;
 
-public class Hamsfer extends Animals implements HomeAnimals{
-    public Hamsfer(int id, String name, LocalDate birthday, String genderName) {
+public class Hamster extends Animals implements HomeAnimals{
+    public Hamster(int id, String name, LocalDate birthday, String genderName) {
         super(id, name, birthday, genderName);
+    }
+
+    public Hamster(int id, String name, LocalDate birthday, String genderName, List<String> commands) {
+        super(id, name, birthday, genderName, commands);
     }
 
     @Override
@@ -16,4 +23,5 @@ public class Hamsfer extends Animals implements HomeAnimals{
                 ", Домашнее животное'"  +
                 '}';
     }
+
 }

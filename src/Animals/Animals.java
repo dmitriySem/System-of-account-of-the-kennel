@@ -2,13 +2,42 @@ package Animals;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
-public abstract class Animals {
+public class Animals {
     protected int id;
     protected String Name;
     protected LocalDate Birthday;
     protected String GenderName;
+    protected List<String> Commands;
+
+    public Animals(int id, String name, LocalDate birthday, String genderName) {
+        this.id = id;
+        Name = name;
+        Birthday = birthday;
+        GenderName = genderName;
+        Commands = new ArrayList<>();
+    }
+
+    public Animals(int id, String name, LocalDate birthday, String genderName, List<String> commands) {
+        this.id = id;
+        Name = name;
+        Birthday = birthday;
+        GenderName = genderName;
+        Commands = commands;
+    }
+
+    public List<String> getCommands() {
+        return Commands;
+    }
+
+    public void addCommand(String command) {
+        Commands.add(command);
+
+    }
 
     public String getGenderName() {
         return GenderName;
@@ -35,6 +64,7 @@ public abstract class Animals {
     }
 
     public String getBirthday() {
+//        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
         DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         return format.format(Birthday);
     }
@@ -43,12 +73,16 @@ public abstract class Animals {
         Birthday = birthday;
     }
 
-    public Animals(int id, String name, LocalDate birthday, String genderName) {
-        this.id = id;
-        Name = name;
-        Birthday = birthday;
-        GenderName = genderName;
+    public void printCommands(){
+        System.out.print(this.toString());
+        if (getCommands().isEmpty())
+            System.out.println(" - это животное не выполняет команды");
+        else{
+            System.out.println(" может выполнять команды: ");
+            getCommands().forEach(command -> System.out.print(" " + command));
+        }
     }
+
 
     @Override
     public String toString() {

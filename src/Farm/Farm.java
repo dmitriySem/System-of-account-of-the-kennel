@@ -3,6 +3,7 @@ package Farm;
 
 import Animals.Animals;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -16,7 +17,7 @@ public class Farm {
         this.animalsList = new ArrayList<>();
     }
 
-    public void addAnimals(Animals animal){
+    public void addAnimal(Animals animal){
         if (!animalsList.contains(animal))
             animalsList.add(animal);
          else
@@ -40,6 +41,14 @@ public class Farm {
         return tempAnimal;
     }
 
+    public Optional<Animals> getAnimal(String name) {
+        Optional<Animals> tempAnimal = Optional.empty();
+        for (Animals pet: animalsList)
+            if (pet.getName().equals(name))
+                return tempAnimal.of(pet);
+        return tempAnimal;
+    }
+
     public void printTypeAnimal(Class<?> choiseClass){
         for (Animals animal:animalsList){
             if (choiseClass.isInstance(animal))
@@ -47,9 +56,14 @@ public class Farm {
         }
     }
 
+
     public void printAllAnimals(){
         for (Animals animals:animalsList)
             System.out.println(animals);
+    }
+
+    public void printTotalAnimalCount(){
+        System.out.println(animalsList.size());
     }
 
 }
