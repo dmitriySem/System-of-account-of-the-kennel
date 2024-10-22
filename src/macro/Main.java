@@ -21,7 +21,7 @@ import java.util.*;
 
 public class Main {
 
-    private static DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    public static final DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
     private static final String urlMysql_localhost = "jdbc:mysql://localhost:3306/human_friends?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     private static final String userName = "root";
     private static final String password = "1111";
@@ -43,10 +43,13 @@ public class Main {
 
 
         Farm farm = new Farm();
-        MySQLConnection connection = new MySQLConnection(urlMysql_localhost, userName, password);
+        MySQLConnection connection = new MySQLConnection(urlMysql_localhost, userName, password, farm);
         connection.connectBase();
 
+//        farm.printAllAnimals();
+
         Scanner scanner = new Scanner(System.in);
+
 
         while (true) {
             System.out.println("\nМеню:");
@@ -59,7 +62,7 @@ public class Main {
             System.out.println("7. Выход");
             System.out.print("Выберите пункт: ");
 
-            int choice = scanner.nextInt();
+            int choice = scanner.nextInt(); //Повесить исключение на неправвельный ввод!!!
             scanner.nextLine();  // consume newline
 
             switch (choice) {

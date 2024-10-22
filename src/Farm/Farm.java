@@ -2,6 +2,7 @@ package Farm;
 
 
 import Animals.Animals;
+import macro.Main;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -13,6 +14,7 @@ public class Farm {
 
 
     public Farm() {
+
         this.animalsList = new ArrayList<>();
     }
 
@@ -66,9 +68,9 @@ public class Farm {
     }
 
     public void listAnimalsByBirthDay() {
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//        DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         animalsList.stream().sorted(Comparator.comparing(a -> a.getBirthday())).forEach(animal -> {
-            String formattedDate = LocalDate.parse(animal.getBirthday(),format).toString();
+            String formattedDate = LocalDate.parse(animal.getBirthday(), Main.dateFormat).toString();
             System.out.println(animal.getName() + " (" + formattedDate + ")" + " - " + animal.getGenderName());
         });
     }

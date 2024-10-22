@@ -1,5 +1,7 @@
 package Animals;
 
+import macro.Main;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -13,6 +15,8 @@ public class Animals {
     protected LocalDate Birthday;
     protected String GenderName;
     protected List<String> Commands;
+
+    private DateTimeFormatter format;
 
     public Animals(int id, String name, LocalDate birthday, String genderName) {
         this.id = id;
@@ -65,8 +69,7 @@ public class Animals {
 
     public String getBirthday() {
 //        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        return format.format(Birthday);
+        return Main.dateFormat.format(Birthday);
     }
 
     public void setBirthday(LocalDate birthday) {
